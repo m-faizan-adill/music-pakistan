@@ -1,6 +1,7 @@
-
+import Link from "next/link";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-black text-gray-400 py-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8">
@@ -16,76 +17,66 @@ function Footer() {
           <h2 className="text-white text-lg font-semibold mb-4">Quick Links</h2>
           <ul>
             <li>
-              <a
-                href={'/home'}
-                className="hover:text-white transition-colors duration-300"
-              >
+              <Link href="/" className="hover:text-white transition-colors duration-300">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href={'/about'}
-                className="hover:text-white transition-colors duration-300"
-              >
+              <Link href="/about" className="hover:text-white transition-colors duration-300">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href={'/courses'}
-                className="hover:text-white transition-colors duration-300"
-              >
+              <Link href="/courses" className="hover:text-white transition-colors duration-300">
                 Courses
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href={'/contact'}
-                className="hover:text-white transition-colors duration-300"
-              >
+              <Link href="/contact" className="hover:text-white transition-colors duration-300">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div>
           <h2 className="text-white text-lg font-semibold mb-4">Follow Us</h2>
           <div className="flex space-x-4">
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-300"
-            >
+            <a href="#" aria-label="Facebook" className="hover:text-white transition-colors duration-300">
               Facebook
             </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-300"
-            >
+            <a href="#" aria-label="Twitter" className="hover:text-white transition-colors duration-300">
               Twitter
             </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-300"
-            >
+            <a href="#" aria-label="Instagram" className="hover:text-white transition-colors duration-300">
               Instagram
             </a>
           </div>
         </div>
-        <div>
+         <div>
           <h2 className="text-white text-lg font-semibold mb-4">Contact Us</h2>
           <p>Karachi, Pakistan</p>
-          <p>Delhi 10001</p>
           <p>
-            Email: <a href="mailto:adilmuhammadfaizan@gmail.com" className="text-teal-400 hover:underline">adilmuhammadfaizan@gmail.com</a>
+            Email:{" "}
+            <a
+              href="mailto:adilmuhammadfaizan@gmail.com"
+              className="text-teal-400 hover:underline"
+            >
+              adilmuhammadfaizan@gmail.com
+            </a>
           </p>
           <p>
-            Phone: <a href="tel:+923122713867" className="text-teal-400 hover:underline">0312-2713867</a>
+            Phone:{" "}
+            <a
+              href="tel:+923122713867"
+              className="text-teal-400 hover:underline"
+            >
+              0312-2713867
+            </a>
           </p>
         </div>
       </div>
-      <p className="text-center text-xs pt-8 mt-4 border-t border-gray-600">© 2024 Music School. All rights reserved.</p>
-      </footer>
+      <p className="text-center text-xs pt-8 mt-4 border-t border-gray-800">© {currentYear} Music School. All rights reserved.</p>
+    </footer >
   )
 }
 
